@@ -1,0 +1,21 @@
+{
+  "name": "pink-pawns-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
+  "scripts": {
+  "dev": "concurrently \"npm run dev --workspace=frontend\" \"npm run dev --workspace=backend\"",
+  "start": "concurrently \"npm start --workspace=frontend\" \"npm start --workspace=backend\"",
+  "build": "npm run build --workspace=frontend",
+  "install-all": "npm install && npm install --workspace=frontend && npm install --workspace=backend"
+},
+  "dependencies": {
+    "nodemon": "^3.1.10"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.0"
+  }
+}
